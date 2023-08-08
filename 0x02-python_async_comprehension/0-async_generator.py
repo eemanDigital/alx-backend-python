@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-'''Task 0's module: Async Generator.
-'''
-import asyncio
+"""
+Defines an Async Generator
+"""
 import random
-from typing import AsyncIterator
+import asyncio
+from typing import Generator
 
 
-async def async_generator() -> AsyncIterator[float]:
-    '''Waits for a random number of seconds.
-    '''
+async def async_generator() -> Generator[float, None, None]:
+    """
+    Loop 10 times, each time asynchronously
+    wait 1 second, then yield a random number between 0 and 10.
+    """
     for _ in range(10):
         await asyncio.sleep(1)
-        yield random.uniform(0, 10)
+        yield random.random() * 10

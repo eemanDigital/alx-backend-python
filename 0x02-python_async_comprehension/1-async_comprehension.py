@@ -4,14 +4,22 @@
 import asyncio
 from typing import List
 from asyncio import run
-from random import uniform
 from async_generator import async_generator
 
+
 async def async_comprehension() -> List[float]:
+    """
+    Collects 10 random numbers using an async
+    comprehension over async_generator.
+
+    Returns:
+        List[float]: A list of 10 random floating-point numbers.
+    """
     result = [i async for i in async_generator()]
     return result
+
 
 async def main():
     print(await async_comprehension())
 
-run(main())
+run(main())  # Execute the main coroutine

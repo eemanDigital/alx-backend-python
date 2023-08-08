@@ -4,6 +4,7 @@
 import asyncio
 import random
 
+
 async def async_generator():
     '''Waits for a random number of seconds.
     '''

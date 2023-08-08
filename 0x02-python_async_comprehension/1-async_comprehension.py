@@ -3,15 +3,15 @@
 '''
 import asyncio
 from typing import List
+from asyncio import run
+from random import uniform
+from async_generator import async_generator
 
+async def async_comprehension() -> List[float]:
+    result = [i async for i in async_generator()]
+    return result
 
-delay_random = __import__('0-basic_async_syntax').delay_random
+async def main():
+    print(await async_comprehension())
 
-
-async def wait_n(n: int, delay: int) -> List[float]:
-    '''Executes wait_random n times.
-    '''
-    wait_times = await asyncio.gather(
-        *tuple(map(lambda _: delay_random(delay), range(n)))
-    )
-    return sorted(wait_times)
+run(main())

@@ -20,4 +20,4 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     float: sum is returned as float
     """
     v = v * v
-    return k, v 
+    return k, v

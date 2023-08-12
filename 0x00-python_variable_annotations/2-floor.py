@@ -1,9 +1,9 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 """
 Module that execute type-annotated function floor which takes
 a float n as argument and returns the floor of the float.
 """
-import math
+#import math
 
 
 def floor(n: float) -> int:
@@ -14,4 +14,4 @@ def floor(n: float) -> int:
     Return:
     int: value of the floored float arg
     """
-    return math.floor(n)
+    return int(n)
